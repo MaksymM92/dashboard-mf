@@ -21,6 +21,13 @@ const routes: Routes = [
       import('chart2/LineModule').then((m) => {
         return m.LineModule;
       })
+  },
+  {
+    path: 'management',
+    loadChildren: () =>
+      import('management/TableModule').then((m) => {
+        return m.TableModule;
+      })
   }
 ];
 

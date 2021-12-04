@@ -10,7 +10,7 @@ sharedMappings.register(
 
 module.exports = {
   output: {
-    uniqueName: "dashboard",
+    uniqueName: "management",
     publicPath: "auto"
   },
   optimization: {
@@ -25,18 +25,19 @@ module.exports = {
     new ModuleFederationPlugin({
 
         // For remotes (please adjust)
-        // name: "dashboard",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './projects/dashboard/src/app/app.component.ts',
-        // },
+        name: "management",
+        filename: "managementEntry.js",
+        exposes: {
+          './TableModule': './projects/management/src/app/table/table.module.ts',
+        },
 
         // For hosts (please adjust)
-        remotes: {
-            "chart1": "chart1@http://localhost:5000/chartEntry.js",
-            "chart2": "chart2@http://localhost:3000/chart2Entry.js",
-            "management": "management@http://localhost:5010/managementEntry.js",
-        },
+        // remotes: {
+        //     "dashboard": "dashboard@http://localhost:4200/remoteEntry.js",
+        //     "chart1": "chart1@http://localhost:5000/remoteEntry.js",
+        //     "chart2": "chart2@http://localhost:3000/remoteEntry.js",
+
+        // },
 
         shared: share({
           "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
