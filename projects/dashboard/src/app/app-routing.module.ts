@@ -14,6 +14,13 @@ const routes: Routes = [
       import('chart1/BarModule').then((m) => {
         return m.BarModule;
       })
+  },
+  {
+    path: 'chart2',
+    loadChildren: () =>
+      import('chart2/LineModule').then((m) => {
+        return m.LineModule;
+      })
   }
 ];
 

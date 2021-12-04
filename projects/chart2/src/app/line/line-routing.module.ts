@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {LineComponent} from "./line.component";
 
 const routes: Routes = [
   {
-    path: 'chart1',
-    loadChildren: () => import('./bar/bar.module').then((m) => m.BarModule)
+    path: '',
+    component: LineComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class LineRoutingModule { }

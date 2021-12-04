@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'chart1',
-    loadChildren: () => import('./bar/bar.module').then((m) => m.BarModule)
+    path: 'chart2',
+    loadChildren: () => import('./line/line.module').then((m) => m.LineModule)
   }
 ];
 
